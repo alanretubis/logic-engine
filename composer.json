@@ -5,7 +5,7 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "Alanretubis\\LogicEngine\\": "src/"
+      "AlanRetubis\\LogicEngine\\": "src/"
     }
   },
   "authors": [
