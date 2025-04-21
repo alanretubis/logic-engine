@@ -1,0 +1,30 @@
+{
+  "name": "alanretubis/logic-engine",
+  "description": "A logic management system with configurable conditions, actions, and rules for Laravel applications.",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Alanretubis\\LogicEngine\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Alan Teves Retubis",
+      "email": "alanretubis@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": "^8.0",
+    "illuminate/support": "^8.0|^9.0|^10.0",
+    "illuminate/database": "^8.0|^9.0|^10.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "AlanRetubis\\LogicEngine\\LogicEngineServiceProvider"
+      ]
+    }
+  }
+}
