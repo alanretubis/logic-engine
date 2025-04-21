@@ -3,7 +3,6 @@ namespace AlanRetubis\LogicEngine;
 
 use Illuminate\Support\ServiceProvider;
 use AlanRetubis\LogicEngine\Registry\OperatorRegistry;
-use AlanRetubis\LogicEngine\Actions\SendEmailAction;
 use AlanRetubis\LogicEngine\Registry\ActionRegistry;
 
 class LogicEngineServiceProvider extends ServiceProvider
@@ -26,8 +25,6 @@ class LogicEngineServiceProvider extends ServiceProvider
         OperatorRegistry::register('>', fn($a, $b) => $a > $b);
         OperatorRegistry::register('<', fn($a, $b) => $a < $b);
 
-        // Register default actions
-        ActionRegistry::register('SendEmail', SendEmailAction::class);
     }
 
     public function register()
