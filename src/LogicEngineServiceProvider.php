@@ -10,8 +10,13 @@ class LogicEngineServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        // Publish migrations
+        // Load and publish migrations
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+
+        // Publish config file
+        $this->publishes([
+            __DIR__.'/../config/logic-engine.php' => config_path('logic-engine.php'),
+        ], 'logic-engine-config');
 
         // Register default operators
         OperatorRegistry::register('==', fn($a, $b) => $a == $b);
@@ -27,6 +32,10 @@ class LogicEngineServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/logic-engine.php', 'logic-engine');
+        // Merge the default config file so users can override it
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/logic-engine.php',
+            'logic-engine'
+        );
     }
 }
